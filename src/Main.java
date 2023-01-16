@@ -21,7 +21,10 @@ public class Main {
 //  обработка примера
             str = str.trim();
             String[] strings = str.split(" ");
-            if (strings.length != 3) {
+            if (strings.length < 3) {
+                throw new NumberFormatException("Cтрока не является математической операцией");
+            }
+            if (strings.length > 3) {
                 throw new NumberFormatException("Формат математической операции не удовлетворяет заданию - два операнда и один оператор через пробелы");
             }
 //  определение введеной системы счисления
